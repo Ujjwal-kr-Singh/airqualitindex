@@ -15,7 +15,7 @@ router.post('/user/create', async (req, res) => {
     userController.createUser(req,res);
         
 });
-router.get('/History', async (req, res) => {
+router.get('/searchistory', async (req, res) => {
     apiController.getHistory(req,res);
         
 });

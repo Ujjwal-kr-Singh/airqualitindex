@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const connect = async() => {
     try {
-        let connection = await mongoose.connect(`mongodb://localhost:27017/aqidb`, {useNewUrlParser: true,});
+        let connection = await mongoose.connect(`mongodb://127.0.0.1:27017/aqidb`, 
+        {useNewUrlParser: true,});
         console.log("Data base connected...");
     } catch(error) {
         console.log(error)

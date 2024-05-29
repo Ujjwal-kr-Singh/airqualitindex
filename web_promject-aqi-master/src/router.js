@@ -9,7 +9,6 @@ import MyFront3 from './components/MyFront3.vue';
 import ShowTable from './components/ShowTable.vue';
 import SignUp from './components/SignUp.vue';
 import BG from './components/BG.vue';
-import SignUp2 from './components/signup2.vue';
 import WelcomePage from './components/welcome.vue';
 import HistoryPage from './components/HistoryPage.vue';
 
@@ -63,11 +62,7 @@ const routes=[
        name: 'bg',
        component: (BG),
     },
-    {
-       path: '/SignUp2',
-       name: 'SignUp2',
-      component: (SignUp2),
-     },
+    
     {
      path: '/',
      name: 'WelcomePage',

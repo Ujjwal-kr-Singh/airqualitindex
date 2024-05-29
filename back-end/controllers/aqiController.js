@@ -74,6 +74,7 @@ const getCity = async (req, res) => {
   try{
 
     // const city = req.query.city;
+    console.log('getting city::::::::::::');
     let city = (req.params.id);
     console.log(city);
     
@@ -91,7 +92,7 @@ const getCity = async (req, res) => {
 const getHistory = async (req, res)=>{
   try{
     // let city = (req.params.id);
-    let db =await  aqidb.find({}, _id, cityName, overall_aqi);
+    let db =await  aqidb.find({});
     console.log(db);
     res.status(200).send({success: true, message:'History fetched successfully', data: db});
   }catch(err){

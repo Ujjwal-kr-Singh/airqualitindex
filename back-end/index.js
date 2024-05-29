@@ -15,7 +15,7 @@ app.use(routes);
 
 
 
-app.listen(3000,(error)=>{
+app.listen(3000, (error)=>{
     if(error){
         console.log(error);
     }

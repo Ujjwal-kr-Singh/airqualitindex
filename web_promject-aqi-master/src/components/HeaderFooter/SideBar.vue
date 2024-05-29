@@ -8,7 +8,7 @@
     <body>
         <div class="sidebocs">  
          <span>
-          <button class="btn btn-warning custom-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"> <b>≡</b></button>
+          <button class="btn btn-success custom-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"> <b>≡</b></button>
       </span>
         </div>
     <div class="offcanvas offcanvas-start text-bg-warning" id="demo">
@@ -19,12 +19,11 @@
         <div class="offcanvas-body">
             <nav>
                 <b><router-link to="/SignUp">SignUp</router-link></b><br/><br/>
-                <b><router-link to="/SignUp2">SignUp2</router-link></b><br/><br/>
               <b><router-link to="/login">Login </router-link></b><br/><br/>
 
                 <b><router-link to="/front3">City-Search</router-link></b><br/><br/>
                 <b><router-link to="/front">My front</router-link></b><br/><br/>
-                <b><router-link to="/myfront3">Welcome</router-link></b><br/><br/>
+                <b><router-link to="/">Welcome</router-link></b><br/><br/>
 
                 <b><router-link to="/hp1">HomePage1</router-link></b><br/><br/>
                 <b><router-link to="/HomePage2">HomePage2</router-link></b><br/><br/>

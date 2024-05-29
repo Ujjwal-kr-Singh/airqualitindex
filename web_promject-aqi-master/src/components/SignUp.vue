@@ -36,6 +36,7 @@
   
   <script>
   import axios from 'axios';
+  import router from '@/router';
   export default {
     data() {
       return {
@@ -68,7 +69,7 @@
               console.log("result", result);
               // console.log("city;ssss id  ",result.data.data.id);
             if (result.data.success) {
-                // router.push({path:'NewLogin' data:result.data.data}) 
+                router.push({path:'/' }) 
       }
         console.log("Submitted Data:", this.filerstName, this.lastName, this.city, this.phone, this.password);
       },

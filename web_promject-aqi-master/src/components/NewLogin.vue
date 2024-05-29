@@ -86,7 +86,7 @@
 }
   .background{
     background-image:url("@/assets/new3.jpg");
-    background-size:100% ;
+    background-size:103% ;
     margin: auto;
     margin-top: -0px;
     padding-bottom:30% ;
