@@ -26,13 +26,14 @@
   
         <div class="details">
           <div v-for="(value, key) in pollutants" :key="key">
-            <h3>{{ key }} : {{ value }}</h3>
+            <h3>{{ key }} :{{ value }}</h3>
           </div>
         </div>
   <!-- //chart -->
-        <div class="chart">
+        <div class="chart" >
           <h2>Air Quality Image: {{ aqi }}</h2>
-          <p>Status: {{ getStatus(aqi) }}</p>
+          getImage(aqi)
+          <p>Status:  </p>
           <!-- <img alt="Vue logo" src=getImage(aqi)> -->
            
       
@@ -43,7 +44,7 @@
       <div class="index" >
         <h2>Air Quality Index: {{ aqi }}</h2>
         <p>Status: {{ getStatus(aqi) }}</p>
-        <div class="aqi-circle"  :style="{ backgroundColor: getAqiColor(aqi) }">
+        <div class="aqi-circle"  >
           {{ aqi }}
         </div>
       </div>
@@ -120,21 +121,22 @@
           return 'Hazardous💀';
         }
       },
-      // getImage(aqi) { //for img
-      //   if (aqi <= 50) {
-      //     return "@/assets/loginimg.jpg";
-      //   } else if (aqi <= 100) {
-      //     return "@/assets/loginimg.jpg";
-      //   } else if (aqi <= 150) {
-      //     return "@/assets/loginimg.jpg";
-      //   } else if (aqi <= 200) {
-      //     return "@/assets/loginimg.jpg";
-      //   } else if (aqi <= 300) {
-      //     return "@/assets/loginimg.jpg";
-      //   } else {
-      //     return "@/assets/loginimg.jpg";
-      //   }
-      // }
+      getImage(aqi) { //for img setting
+        
+        if (aqi <= 50) {
+          return ("@/assets/logo.jpg");
+        } else if (aqi <= 100) {
+          return "@/assets/loginimg.jpg";
+        } else if (aqi <= 150) {
+          return "@/assets/loginimg.jpg";
+        } else if (aqi <= 200) {
+          return "@/assets/loginimg.jpg";
+        } else if (aqi <= 300) {
+          return "@/assets/loginimg.jpg";
+        } else {
+          return "@/assets/loginimg.jpg" ;
+        }
+      },
 
       getAqiColor(aqi) {
         if (aqi == null) {
@@ -264,7 +266,9 @@
     width: 70%;
     height: 250px;
     border: 2px solid #27a4a7;
-    align-self: flex-start
+    align-self: flex-start;
+    background-image: url({{ aqi }});
+    background-image:center;
    
   }
   </style>

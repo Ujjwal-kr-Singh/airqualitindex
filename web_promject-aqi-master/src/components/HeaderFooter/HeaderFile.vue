@@ -30,6 +30,7 @@
 </html>
   </template>
   <script>
+  import router from '@/router';
    var moment = require('moment');
   import SideBar from './SideBar.vue';
   export default {
@@ -45,10 +46,12 @@
       login() {
         // Implement your login logic here
         console.log('Login clicked');
+        router.push('/login');
       },
       signup() {
         // Implement your sign-up logic here
         console.log('Sign Up clicked');
+        router.push('/Signup');
       }
     },
     data() {
@@ -101,7 +104,7 @@
     background-color: #05650d;
   }
   .date{
-    color: aqua;
+    color: rgb(0, 64, 255);
     font-size: 20px;
     box-shadow: #282121;
     text-align: center;

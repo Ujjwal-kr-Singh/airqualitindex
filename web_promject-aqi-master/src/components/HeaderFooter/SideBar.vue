@@ -8,27 +8,30 @@
     <body>
         <div class="sidebocs">  
          <span>
-          <button class="btn btn-success custom-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"> <b>≡</b></button>
+          <button class="btn btn-warning custom-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"> <b>≡</b></button>
       </span>
         </div>
-    <div class="offcanvas offcanvas-start text-bg-warning" id="demo">
+    <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
         <div class="offcanvas-header">
           <h1 class="offcanvas-title">Quick Links</h1>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
             <nav>
-                <b><router-link to="/SignUp">SignUp</router-link></b><br/><br/>
+              <b><router-link to="/">Welcome</router-link></b><br/><br/>
+
+              <b><router-link to="/SignUp">SignUp</router-link></b><br/><br/>
               <b><router-link to="/login">Login </router-link></b><br/><br/>
 
-                <b><router-link to="/front3">City-Search</router-link></b><br/><br/>
-                <b><router-link to="/front">My front</router-link></b><br/><br/>
-                <b><router-link to="/">Welcome</router-link></b><br/><br/>
+                <b><router-link to="/front3">Get Started</router-link></b><br/><br/>
+                <b><router-link to="/front">Api-Search</router-link></b><br/><br/>
 
-                <b><router-link to="/hp1">HomePage1</router-link></b><br/><br/>
-                <b><router-link to="/HomePage2">HomePage2</router-link></b><br/><br/>
-                <b><router-link to="/showtable">ShowTable</router-link></b><br/><br/>
+                <b><router-link to="/HomePage2">Server Search</router-link></b><br/><br/>
                 <b><router-link to="/HistoryPage">History</router-link></b><br/><br/>
+
+                <b><router-link to="/FrontExtra">FrontExtra</router-link></b><br/><br/>
+
+                <b><router-link to="/MyAdvisory">Advisory</router-link></b><br/><br/>
 
               </nav> 
 
@@ -56,7 +59,7 @@ export default {
     padding-top: 1px; /* Adjust padding as needed */
   }
   
-  .custom-btn{
+  .btn btn- custom-btn{
     /* Optional styling for the button */
     background-color: rgb(18, 255, 129);
     width: auto; /* Adjust width as needed */

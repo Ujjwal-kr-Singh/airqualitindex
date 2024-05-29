@@ -1,103 +1,111 @@
 <template>
-    <div class="taable" v-if="aqiData">
-      <table>
-        <tr>
-          <td><b>City Name</b></td>
-          <td>{{ apiData.cityName }}</td>
-        </tr>
-        <tr>
-          <td>CO Concentration</td>
-          <td>{{ apiData.CO.concentration }}</td>
-        </tr>
-        <tr>
-          <td>CO AQI</td>
-          <td>{{ apiData.CO.aqi }}</td>
-        </tr>
-        <tr>
-          <td>NO2 Concentration</td>
-          <td>{{ apiData.NO2.concentration }}</td>
-        </tr>
-        <tr>
-          <td>NO2 AQI</td>
-          <td>{{ apiData.NO2.aqi }}</td>
-        </tr>
-        <tr>
-          <td>O3 Concentration</td>
-          <td>{{ apiData.O3.concentration }}</td>
-        </tr>
-        <tr>
-          <td>O3 AQI</td>
-          <td>{{ apiData.O3.aqi }}</td>
-        </tr>
-        <tr>
-          <td>SO2 Concentration</td>
-          <td>{{ apiData.SO2.concentration }}</td>
-        </tr>
-        <tr>
-          <td>SO2 AQI</td>
-          <td>{{ apiData.SO2.aqi }}</td>
-        </tr>
-        <tr>
-          <td>PM2.5 Concentration</td>
-          <td>{{ apiData.PM2_5.concentration }}</td>
-        </tr>
-        <tr>
-          <td>PM2.5 AQI</td>
-          <td>{{ apiData.PM2_5.aqi }}</td>
-        </tr>
-        <tr>
-          <td>PM10 Concentration</td>
-          <td>{{ apiData.PM10.concentration }}</td>
-        </tr>
-        <tr>
-          <td>PM10 AQI</td>
-          <td>{{ apiData.PM10.aqi }}</td>
-        </tr>
-        <tr>
-          <td>Overall AQI</td>
-          <td>{{ apiData.overall_aqi }}</td>
-        </tr>
-        <tr>
-          <td>Date</td>
-          <td>{{ formattedDate }}</td>
-        </tr>
-        <tr>
-          <td>Time</td>
-          <td>{{ formattedTime }}</td>
-        </tr>
-      </table><br>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card shadow-lg rounded">
+            <div class="card-header bg-primary text-light text-center">
+              <h3>Air Quality Information</h3>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-center">Parameter</th>
+                      <th scope="col" class="text-center">Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>City Name</td>
+                      <td>{{ apiData.cityName }}</td>
+                    </tr>
+                    <tr>
+                      <td>Overall AQI</td>
+                      <td>{{ apiData.overall_aqi }}</td>
+                    </tr>
+                    <tr>
+                      <td>CO Concentration</td>
+                      <td>{{ apiData.CO.concentration }}</td>
+                    </tr>
+                    <tr>
+                      <td>CO AQI</td>
+                      <td>{{ apiData.CO.aqi }}</td>
+                    </tr>
+                    <tr>
+                      <td>NO2 Concentration</td>
+                      <td>{{ apiData.NO2.concentration }}</td>
+                    </tr>
+                    <tr>
+                      <td>NO2 AQI</td>
+                      <td>{{ apiData.NO2.aqi }}</td>
+                    </tr>
+                    <tr>
+                      <td>O3 Concentration</td>
+                      <td>{{ apiData.O3.concentration }}</td>
+                    </tr>
+                    <tr>
+                      <td>O3 AQI</td>
+                      <td>{{ apiData.O3.aqi }}</td>
+                    </tr>
+                    <tr>
+                      <td>SO2 Concentration</td>
+                      <td>{{ apiData.SO2.concentration }}</td>
+                    </tr>
+                    <tr>
+                      <td>SO2 AQI</td>
+                      <td>{{ apiData.SO2.aqi }}</td>
+                    </tr>
+                    <tr>
+                      <td>PM2.5 Concentration</td>
+                      <td>{{ apiData.PM2_5.concentration }}</td>
+                    </tr>
+                    <tr>
+                      <td>PM2.5 AQI</td>
+                      <td>{{ apiData.PM2_5.aqi }}</td>
+                    </tr>
+                    <tr>
+                      <td>PM10 Concentration</td>
+                      <td>{{ apiData.PM10.concentration }}</td>
+                    </tr>
+                    <tr>
+                      <td>PM10 AQI</td>
+                      <td>{{ apiData.PM10.aqi }}</td>
+                    </tr>
+                    <tr>
+                      <td>Date</td>
+                      <td>{{ formattedDate }}</td>
+                    </tr>
+                    <tr>
+                      <td>Time</td>
+                      <td>{{ formattedTime }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="c">
+              <button class="btn btn-info" @click="goBack">Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p v-else>loading data</p>
-      <button class="btn btn-info cutsom-btn" @click="goBack" >Back</button>
-
   </template>
   
   <script>
   import 'bootstrap/dist/css/bootstrap.min.css'
   import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-    // import axios from 'axios';
+    import axios from 'axios';
     // import router from '@/router';
-    // import { useRoute } from 'vue-router';
+    import { useRoute } from 'vue-router';
   
     export default {
-      name: "ShowTable",
+      name: "HistoryPg",
       data() {
         return {
           searchQuery:'',
           apiData: {},
-          aqiData: {
-            cityName:"ghaziabad",
-            CO: { concentration: 300.41, aqi: 3 },
-            NO2: { concentration: 2.4, aqi: 3 },
-            O3: { concentration: 138.76, aqi: 209 },
-            SO2: { concentration: 4.23, aqi: 6 },
-            PM2_5: { concentration: 22.89, aqi: 64 },
-            PM10: { concentration: 42.1, aqi: 38 },
-            overall_aqi: 209,
-            _id: '6649ddc35c17359976390161',
-            createdAt: new Date('2024-05-19T11:08:51.812Z'),
-            updatedAt: new Date('2024-05-19T11:08:51.812Z')
-          },
         };
       },
       created(){
@@ -107,32 +115,38 @@
       
       computed: {
         formattedDate() {
-          return this.aqiData.createdAt.toLocaleDateString();
+          return this.apiData.createdAt.toLocaleDateString();
         },
         formattedTime() {
-          return this.aqiData.createdAt.toLocaleTimeString();
-        }
+          return this.apiData.createdAt.toLocaleTimeString();
+        },
       },
       methods: {
         goBack() {
           window.history.back();
         },
         async getvalues() {
-          // try{
-          // const route= useRoute();
-          // this.searchQuery = await route.params.id;
-          // console.log( 'Product ID:', this.searchQuery);
-          // let result = await axios({
-          //         method:'get',
-          //         url:'http://localhost:3000/get/'+this.searchQuery,
-          //     })
-          //     console.log(result);
-              // this.aqiData= await result.data.data;
-              // console.log("####",this.aqiData,"####");
-              // this.aqiData= this.aqiData.toObject();
-              // console.log("$$$$$$$$$$$$$$",this.aqiData,"$$$$$$$$$$$$$$$");
-            // }
-          // catch(e)    {  console.log(e.message,"error");        }
+          try{
+          const route= useRoute();
+          this.searchQuery = await route.params.id;
+          console.log( 'Product ID:', this.searchQuery);
+          let result = await axios({
+                  method:'get',
+                  url:'http://localhost:3000/get/'+this.searchQuery,
+              })
+              console.log(result);
+              if (result.data.success== true) {
+              this.apiData= await result.data.data;
+              this.apiData.createdAt= new Date(this.apiData.createdAt);
+              this.apiData.cityName= this.apiData.cityName.toUpperCase();
+  
+              // console.log(this.apiData.createdAt);
+            }
+              else {
+                console.log("##error in get##");
+              }
+            }
+          catch(e)    {  console.log(e.message,"error");        }
               
               
         },
@@ -140,52 +154,30 @@
       
     };
     </script>
-    
-    <style scoped>
-    .table-responsive {
-      margin-top: 20px;
-      box-shadow: 10px 10px 10000px 20px;
-      color: rgb(255, 255, 255); 
   
   
-    }
-    .btn-info {
-      margin-top: 20px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    
-    td {
-      border: 1px solid #ddd;
-      padding: 7px;
-    }
-    
-    button {
-      margin-bottom: 20px;
-    }
-    table {
-      text-align: center;
-    }
-    .taable{
-      color: rgb(255, 255, 255); 
-      margin-top: 1.5rem;
-      background-image: url("E:\colleg proj\web_promject-aqi-master\src\assets\bg\bg6.jpg");
-      background-repeat: no-repeat;
-      background-size :  200%;  
-      padding-bottom: -4rem;
-      margin-bottom: 2rem;
-      margin-left: 13%;
-      max-width: 70%;
-      box-shadow: 10px 10px 100px 20px;
+  <style scoped>
+  .background {
+    /* Add your background image styles here */
+    background-image: url("E:\colleg proj\web_promject-aqi-master\src\assets\bg\Untitled.jpg"); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+  }
   
-    }
-    .cutsom-btn{ 
-      margin-bottom: 5rem;
-    }
-    body{
-      background-color: black;
-    }
-    </style>
-    
+  .wrapper {
+    background-color: transparent; /* Semi-transparent white overlay */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .card-body{
+    background: transparent;
+  }
+  .c{
+    margin-bottom:5rem;
+    padding-bottom: 5rem;
+  }
+  .col-md-8{
+    background: transparent;
+  }
+  </style>

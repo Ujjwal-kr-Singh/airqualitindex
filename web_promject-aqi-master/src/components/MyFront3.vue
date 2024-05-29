@@ -11,7 +11,7 @@
           </p>
           <button class="hero-button" @click="scrollToAbout">Learn More</button>
           <button class="hero-button1" @click="scrollToAction">Action</button>
-          <button class="hero-button2" @click="scrollToNext">Test</button>
+          <button class="hero-button2" @click="scrollToNext">Api Search</button>
         </div>
       </div>
   

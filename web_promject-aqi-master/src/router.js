@@ -11,6 +11,9 @@ import SignUp from './components/SignUp.vue';
 import BG from './components/BG.vue';
 import WelcomePage from './components/welcome.vue';
 import HistoryPage from './components/HistoryPage.vue';
+import HistoryPg from './components/Historypg.vue';
+import FrontExtra from './components/FrontExtra.vue';
+import MyAdvisory from './components/MyAdviso.vue';
 
 
 const routes=[
@@ -31,11 +34,6 @@ const routes=[
         component: (MyFront3),
         meta: { requiresAuth: true }
       },
-      // {
-      //   path: '/',
-      //   name: 'HelloWorld',
-      //   component: (HelloWorld)
-      // },
       {
         path: '/hp1',
         name: 'HomePage1',
@@ -72,6 +70,21 @@ const routes=[
       path: '/HistoryPage',
       name: 'HistoryPage',
       component: (HistoryPage)
+    },
+    {
+      path: '/newtable/:id',
+      name: 'HistoryPg',
+      component: (HistoryPg),
+    },
+    {
+      path: '/FrontExtra',
+      name: 'FrontExtra',
+      component: (FrontExtra),
+    },
+    {
+      path: '/MyAdvisory',
+      name: 'MyAdvisory',
+      component: (MyAdvisory),
     },
 ]
 const router = createRouter({

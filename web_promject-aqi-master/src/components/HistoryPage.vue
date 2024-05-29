@@ -1,21 +1,25 @@
 <template>
-    <div class="history-page">
+  <div class="boodi">
+    <div class="page">
+<div class="history-page">
       <h1>Search History</h1>
       <div class="card-container">
         <div class="card" v-for="(search, index) in searchHistory" :key="index">
           <div class="city-name">
-            <h2>{{ search.cityName }}</h2>
+            <h2>{{ search.cityName.toUpperCase() }}</h2>
           </div>
           <div class="aqi">
-            <p>AQI: {{ search.overall_aqi }}</p>
+            <p>Overall AQI: {{ search.overall_aqi }}</p>
           </div>
           <div class="time">
-            <p>{{ formatTimestamp(search.timestamp) }}</p>
+            <p>{{ new Date(search.createdAt) }}</p>
           </div>
         </div>
       </div>
     </div>
     <div class="bottom"></div>
+  </div>
+</div>
   </template>
   
   <script>
@@ -29,11 +33,14 @@
           // { city: 'London', aqi: 52, timestamp: 1678886400000 },
           // ... more search history items
         ],
+        result: null,
+        // aqiData: {},
       };
     },
     created() {
       this.loadSearchHistory();
     },
+    
     methods: {
       async loadSearchHistory() {
         try{
@@ -42,20 +49,18 @@
         method: 'get',
         url: 'http://localhost:3000/searchistory',
        });
-       console.log("result>>",result);
-        this.searchHistory = result.data.data;
-        console.log(this.searchHistory);
+       if (result.data.success==true) {
+       this.searchHistory = result.data.data.slice().reverse();
+       }
+       else {console.log("---error data not fetched----");}
       }
-        catch(e)    {  console.log(e.message,"error");        }
-
+        catch(e)    {  console.log(e.message,"error");  }
       },
-      formatTimestamp(timestamp) {
-        const date = new Date(timestamp);
-        return date.toLocaleString(); // Adjust formatting as needed
-      },
+     
       
     },
   };
+
   </script>
   
   <style scoped>
@@ -71,14 +76,16 @@
   
   .card {
     display: flex;
+    color: rgb(255, 255, 255);
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     border-radius: 10px;
-    background-color: #d6d3d3;
-    box-shadow: 20px 20px 20px;
-    max-width: 70%;
+    background-color: transparent;
+    box-shadow: 15px 15px 15px 20px;
+    max-width: 75%;
     margin-left: 14%;
+    margin-bottom: 1rem;
     
   }
   
@@ -87,9 +94,23 @@
     font-weight: bold;
   }
   h1{
-    color: black;
+    color: rgb(235, 252, 0);
   }
   .bottom{
     margin: 10rem;
+  }
+  .boodi {
+    background-image: url('@/assets/bg/R (2).jpg');
+    background-repeat: repeat;
+    background-attachment:scroll;
+    background-size: cover;
+    max-height: 100%;
+  }
+  .page{
+    max-width: 100%;
+    max-height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
   }
   </style>

@@ -20,7 +20,7 @@ const aqidbSchema = new Schema({
   PM10: { type: pollutantSchema, },
   overall_aqi: { type: Number,},
   createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now },
+  // updatedAt: { type: Date, default: Date.now },
 
 });
 

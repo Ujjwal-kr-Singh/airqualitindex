@@ -69,7 +69,7 @@
               console.log("result", result);
               // console.log("city;ssss id  ",result.data.data.id);
             if (result.data.success) {
-                router.push({path:'/' }) 
+                router.push('/') 
       }
         console.log("Submitted Data:", this.filerstName, this.lastName, this.city, this.phone, this.password);
       },

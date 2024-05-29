@@ -7,3 +7,6 @@ rB2f44t2sShmJrWn
 
 
 uaan3321
+
+
+mongodb+srv://dujjwalsingh:<password>@aqiproject.1tbndce.mongodb.net/
