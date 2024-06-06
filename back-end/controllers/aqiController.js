@@ -93,7 +93,7 @@ const getHistory = async (req, res)=>{
   try{
     // let city = (req.params.id);
     let db =await  aqidb.find({});
-    console.log(db);
+    console.log('db data>>>',db);
     res.status(200).send({success: true, message:'History fetched successfully', data: db});
   }catch(err){
     console.log(err.message,': error');

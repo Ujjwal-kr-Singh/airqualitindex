@@ -24,14 +24,21 @@
               <b><router-link to="/login">Login </router-link></b><br/><br/>
 
                 <b><router-link to="/front3">Get Started</router-link></b><br/><br/>
-                <b><router-link to="/front">Api-Search</router-link></b><br/><br/>
+                <!-- <b><router-link to="/front"></router-link></b><br/><br/> -->
+                <b><router-link to="/NewFront">Api-Search</router-link></b><br/><br/>
 
                 <b><router-link to="/HomePage2">Server Search</router-link></b><br/><br/>
-                <b><router-link to="/HistoryPage">History</router-link></b><br/><br/>
+                <b><router-link to="/History">HistoryPg</router-link></b><br/><br/>
+                <!-- <b><router-link to="/HistoryPage">History</router-link></b><br/><br/> -->
 
-                <b><router-link to="/FrontExtra">FrontExtra</router-link></b><br/><br/>
-
+                <!-- <b><router-link to="/FrontExtra">FrontExtra</router-link></b><br/><br/> -->
+              </nav><nav class="xtra">
                 <b><router-link to="/MyAdvisory">Advisory</router-link></b><br/><br/>
+              <i><b><router-link to="/TempView">*TempView</router-link></b></i><br/><br/>
+                <i><b><router-link to="/TempSearch">*TempSearch</router-link></b></i><br/><br/>
+ 
+ 
+
 
               </nav> 
 
@@ -97,7 +104,9 @@ export default {
     gap: 1rem;
     cursor: pointer; /* Change cursor to pointer on hover */ 
   }
-    
+  .xtra{
+    color: #ffffff;
+  }
   
 
 </style>

@@ -14,7 +14,9 @@ import HistoryPage from './components/HistoryPage.vue';
 import HistoryPg from './components/Historypg.vue';
 import FrontExtra from './components/FrontExtra.vue';
 import MyAdvisory from './components/MyAdviso.vue';
-
+import NewFront from './components/NewFront.vue';
+import TempView from './components/TempView.vue';
+import TempSearch from './components/TempSearch.vue';
 
 const routes=[
           
@@ -72,7 +74,7 @@ const routes=[
       component: (HistoryPage)
     },
     {
-      path: '/newtable/:id',
+      path: '/HistoryPg',
       name: 'HistoryPg',
       component: (HistoryPg),
     },
@@ -85,6 +87,26 @@ const routes=[
       path: '/MyAdvisory',
       name: 'MyAdvisory',
       component: (MyAdvisory),
+    },
+    {
+      path: '/NewFront',
+      name: 'NewFront',
+      component: (NewFront),
+    },
+    {
+      path: '/TempView',
+      name: 'TempView',
+      component: (TempView),
+    },
+    {
+      path: '/TempSearch',
+      name: 'TempSearch',
+      component: (TempSearch),
+    },
+    {
+      path: '/alert',
+      name: 'alert',
+      component: (alert),
     },
 ]
 const router = createRouter({

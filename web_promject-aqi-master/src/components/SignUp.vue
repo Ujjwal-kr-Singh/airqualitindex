@@ -71,7 +71,7 @@
             if (result.data.success) {
                 router.push('/') 
       }
-        console.log("Submitted Data:", this.filerstName, this.lastName, this.city, this.phone, this.password);
+        console.log("Submitted Data:", this.firstName, this.lastName, this.city, this.phone, this.password);
       },
     },
   };

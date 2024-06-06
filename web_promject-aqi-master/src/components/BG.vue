@@ -28,6 +28,6 @@ body {
   background-image: url("E:\colleg proj\web_promject-aqi-master\src\assets\bg\ds.jpg");
   background-repeat: repeat;
   background-attachment:scroll;
-  background-size: cover;
+  background-size: 123%;
 }
 </style>
