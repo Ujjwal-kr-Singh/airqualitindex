@@ -28,7 +28,7 @@
                 <b><router-link to="/NewFront">Api-Search</router-link></b><br/><br/>
 
                 <b><router-link to="/HomePage2">Server Search</router-link></b><br/><br/>
-                <b><router-link to="/History">HistoryPg</router-link></b><br/><br/>
+                <b><router-link to="/HistoryPg">History</router-link></b><br/><br/>
                 <!-- <b><router-link to="/HistoryPage">History</router-link></b><br/><br/> -->
 
                 <!-- <b><router-link to="/FrontExtra">FrontExtra</router-link></b><br/><br/> -->
