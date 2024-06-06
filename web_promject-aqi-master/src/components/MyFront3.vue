@@ -167,7 +167,7 @@
         document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
       };
       const scrollToNext = () => {
-        router.push({path:'/NewFront'});
+        router.push({path:'/front'});
 
       };
   
